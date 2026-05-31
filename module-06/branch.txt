@@ -1,0 +1,8 @@
+8590649 feat(module-05): bug-finding session, review rubric, and test suite
+a865418 feat(module-04): best-of-N Notes API generation and scoring rubric
+164540b docs(module-03): CLAUDE.md trim experiment and import-order finding
+9aafd8e feat(module-02): CLI task manager with prompt-iteration comparison
+9646f90 docs(module-00-01): record prework smoke-test and loop reflection
+de9c566 chore: add .gitignore for Python and editor artifacts
+7d9c649 first commit
+feat/bootcamp-modules
