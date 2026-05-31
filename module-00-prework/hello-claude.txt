@@ -1,0 +1,5 @@
+The top-level contents of the repository are: `README.md`, `LICENSE`, `instructor-guide.md`, `student-guide.md`, `certificate-template.md`, an image (`Claude Code Bootcamp.webp`, `Luca_Berton_Logo.png`), and directories `archive`, `assessments`, `book`, `exercises`, `scripts`, `skills`, `slides`, and `specs`.
+
+Both runtimes exceed the minimum requirements. Python is at **3.12.3** (>= 3.11 ✓) and Node.js is at **v25.9.0** (>= 20 ✓).
+
+Pre-work smoke test passed.
