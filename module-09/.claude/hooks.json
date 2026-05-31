@@ -3,7 +3,7 @@
     {
       "event": "pre-commit",
       "name": "notes-api-smoke",
-      "description": "Boot module-09/app.py and assert all 6 endpoint checks pass before allowing a commit.",
+      "description": "Boot module-09/notes_api.py and assert all 6 endpoint checks pass before allowing a commit.",
       "command": "bash module-09/.claude/smoke.sh",
       "on_failure": "block"
     }

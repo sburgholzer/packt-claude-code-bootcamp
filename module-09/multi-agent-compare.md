@@ -11,7 +11,7 @@
 
 ```
 Lead (orchestrator)
-├── Worker 1 → module-09/app.py     port 8099   Candidate A
+├── Worker 1 → module-09/notes_api.py     port 8099   Candidate A
 └── Worker 2 → module-09/app_v2.py  port 8100   Candidate B
 ```
 
@@ -21,7 +21,7 @@ Workers received identical smoke-test scripts (same 6 checks, same logic) with o
 
 ## Candidate descriptions
 
-| | Candidate A (`app.py`) | Candidate B (`app_v2.py`) |
+| | Candidate A (`notes_api.py`) | Candidate B (`app_v2.py`) |
 |---|---|---|
 | Storage | SQLite (`notes.db`) | In-memory dict |
 | Persistence | Yes (survives restart) | No (resets on restart) |
@@ -31,7 +31,7 @@ Workers received identical smoke-test scripts (same 6 checks, same logic) with o
 
 ## Raw worker output (unedited)
 
-### Worker 1 — Candidate A (`app.py`, port 8099)
+### Worker 1 — Candidate A (`notes_api.py`, port 8099)
 
 ```
 PASS  POST   /notes      → 201
@@ -63,7 +63,7 @@ EXIT_CODE:1
 
 ## Lead verdict
 
-**Winner: Candidate A (`app.py`)** — 6/6, exit 0.
+**Winner: Candidate A (`notes_api.py`)** — 6/6, exit 0.
 
 Candidate B fails check 1: `POST /notes` returned 200 instead of the RFC 7231 / REST convention-required 201. The root cause is a single omitted keyword argument (`status_code=201`) in the FastAPI decorator. The smoke test caught it in 14 seconds of wall time.
 

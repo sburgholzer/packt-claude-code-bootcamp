@@ -4,7 +4,7 @@
 set -uo pipefail
 
 REPO_ROOT="$(git rev-parse --show-toplevel)"
-APP_PATH="${APP_PATH:-module-09/app.py}"
+APP_PATH="${APP_PATH:-module-09/notes_api.py}"
 PORT="${PORT:-8099}"
 DIR="$REPO_ROOT/$(dirname "$APP_PATH")"
 MODULE="$(basename "$APP_PATH" .py)"

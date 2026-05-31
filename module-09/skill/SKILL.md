@@ -56,14 +56,14 @@ Steps:
 
 ## Worked example
 
-Target: `module-09/app.py`, port `8000`.
+Target: `module-09/notes_api.py`, port `8099`.
 
 ```bash
 #!/usr/bin/env bash
 set -uo pipefail
 
-APP_PATH="module-09/app.py"
-PORT=8000
+APP_PATH="module-09/notes_api.py"
+PORT=8099
 DIR="$(dirname "$APP_PATH")"
 MODULE="$(basename "$APP_PATH" .py)"
 BASE="http://localhost:$PORT"
