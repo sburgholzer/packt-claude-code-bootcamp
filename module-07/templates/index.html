@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" id="root">
+<head>
+  <script>
+    if (localStorage.getItem('theme') === 'dark') document.getElementById('root').classList.add('dark');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="page">
+
+    <!-- Header -->
+    <header class="header">
+      <h1>Dashboard</h1>
+      <div class="header-actions">
+        <button class="btn-theme" id="theme-toggle" onclick="toggleTheme()" title="Toggle theme"></button>
+        <button class="btn-primary">+ New Note</button>
+      </div>
+    </header>
+
+    <!-- Body row -->
+    <div class="body-row">
+
+      <!-- Sidebar nav -->
+      <aside class="sidebar">
+        <nav>
+          {% for item in nav_items %}
+          <a href="#" class="{{ 'active' if loop.first else '' }}">{{ item }}</a>
+          {% endfor %}
+        </nav>
+      </aside>
+
+      <!-- Main content -->
+      <main class="main">
+
+        <!-- KPI cards -->
+        <div class="kpi-row">
+          {% for kpi in kpis %}
+          <div class="kpi-card">
+            <div class="kpi-label">{{ kpi.label }}</div>
+            <div class="kpi-value">{{ kpi.value }}</div>
+          </div>
+          {% endfor %}
+        </div>
+
+        <!-- Recent items table -->
+        <div class="table-panel">
+          <h2>Recent items</h2>
+          {% for row in recent_items %}
+          <div class="table-row">
+            <span class="row-name">{{ row.name }}</span>
+            <span class="row-dots"></span>
+            <span class="row-value">{{ row.value }}</span>
+          </div>
+          {% endfor %}
+        </div>
+
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">{{ version }}</footer>
+
+  </div>
+  <script>
+    function updateIcon() {
+      var dark = document.getElementById('root').classList.contains('dark');
+      document.getElementById('theme-toggle').textContent = dark ? '☀️' : '🌙';
+    }
+    function toggleTheme() {
+      var root = document.getElementById('root');
+      root.classList.toggle('dark');
+      localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+      updateIcon();
+    }
+    updateIcon();
+  </script>
+</body>
+</html>
