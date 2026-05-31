@@ -2,7 +2,7 @@
 
 **Hook:** `module-09/.claude/hooks.json` → `.git/hooks/pre-commit` → `module-09/.claude/smoke.sh`
 **Trigger:** `git commit -m "test: intentional bug to trigger hook"`
-**Bug introduced:** `raise HTTPException(status_code=500, detail="intentional bug")` at the top of `list_notes()` in `module-09/app.py`
+**Bug introduced:** `raise HTTPException(status_code=500, detail="intentional bug")` at the top of `list_notes()` in `module-09/notes_api.py`
 **Date:** 2026-05-31
 
 ## Actual terminal output
